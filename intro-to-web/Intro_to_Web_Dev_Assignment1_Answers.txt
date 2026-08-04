@@ -1,0 +1,426 @@
+================================================================
+ASSIGNMENT 1 - INTRODUCTION TO WEB DEVELOPMENT
+================================================================
+
+
+----------------------------------------------------------------
+Q1. Explain the difference between frontend, backend, and
+    full-stack development with suitable real-world examples.
+----------------------------------------------------------------
+
+Frontend development refers to everything a user directly sees
+and interacts with in their browser. It deals with layout,
+visual design, and interactivity. Frontend developers work with
+HTML (structure), CSS (styling), and JavaScript (behavior), and
+often use frameworks like React, Angular, or Vue.js to build
+responsive, interactive interfaces. For example, when you open
+Instagram and scroll through your feed, tap the "like" button,
+or swipe between stories, you are interacting with frontend
+code that renders images, animates the heart icon, and updates
+the screen instantly.
+
+Backend development, on the other hand, handles the logic,
+data processing, and server-side operations that a user does
+not see directly. This includes managing databases, handling
+authentication, processing business logic, and serving data to
+the frontend through APIs. Backend developers commonly use
+languages and frameworks such as Python (Django/FastAPI),
+Node.js (Express), Java (Spring Boot), or PHP (Laravel), along
+with databases like PostgreSQL or MongoDB. Continuing the
+Instagram example, when you "like" a post, the backend is what
+verifies your identity, updates the like count in the database,
+and notifies the post's owner.
+
+Full-stack development combines both frontend and backend
+skills. A full-stack developer can design a user interface AND
+build the server logic and database behind it, allowing them
+to build an entire application end-to-end. For instance, a
+solo developer building a food delivery app like Zomato from
+scratch would need to design the ordering screen (frontend),
+build the payment and order-tracking logic (backend), and
+connect both together — making them a full-stack developer.
+
+Summary:
+  Frontend      -> What the user sees and interacts with
+  Backend       -> What powers the app behind the scenes
+  Full-stack    -> Both combined, end-to-end development
+
+
+----------------------------------------------------------------
+Q2. Create a simple diagram showing how the client-server model
+    works in web architecture.
+----------------------------------------------------------------
+
+ASCII Diagram:
+
+    +------------------+                         +------------------+
+    |                  |   (1) HTTP Request       |                  |
+    |      CLIENT      | -----------------------> |      SERVER      |
+    |  (Browser / App) |                          | (Web Server /    |
+    |                  | <----------------------- |  Backend App)    |
+    +------------------+   (2) HTTP Response       +------------------+
+                              (HTML/CSS/JS/JSON)
+
+Description:
+The client-server model is the foundation of how the web works.
+The "client" is the user's device — typically a web browser
+(Chrome, Firefox) or a mobile app — that initiates communication
+by sending a request. The "server" is a remote computer that
+listens for these requests, processes them, and sends back a
+response.
+
+The flow works as follows:
+  1. The client sends an HTTP request to the server, specifying
+     what resource it wants (e.g., a webpage, an image, or data
+     from an API), usually by entering a URL or clicking a link.
+  2. The server receives this request, processes it (which may
+     involve querying a database or running backend logic), and
+     generates an appropriate response.
+  3. The server sends the response back to the client, typically
+     containing HTML, CSS, JavaScript, JSON, or media files.
+  4. The client (browser) receives this response and renders it
+     for the user to see and interact with.
+
+This request-response cycle repeats every time a user navigates
+to a new page, submits a form, or triggers an action that needs
+data from the server.
+
+
+----------------------------------------------------------------
+Q3. Describe how a browser requests and displays a web page from
+    a web server.
+----------------------------------------------------------------
+
+When a user types a URL (e.g., www.example.com) into a browser
+and hits Enter, the following sequence of steps occurs:
+
+1. DNS Resolution: The browser first needs to find the actual
+   IP address of the server hosting the website. It sends a
+   request to a DNS (Domain Name System) server, which
+   translates the human-readable domain name (example.com) into
+   a numerical IP address (e.g., 192.0.2.10).
+
+2. Establishing a Connection: The browser opens a TCP connection
+   to the server at that IP address, usually over port 80 (HTTP)
+   or port 443 (HTTPS). If HTTPS is used, an SSL/TLS handshake
+   also occurs here to encrypt the connection.
+
+3. Sending the HTTP Request: The browser sends an HTTP GET
+   request to the server, asking for the specific resource
+   (usually the homepage, e.g., "GET /index.html").
+
+4. Server Processing: The web server receives the request. If
+   it's a static site, it simply locates the requested file. If
+   it's a dynamic site, the backend application processes the
+   request — this might involve querying a database, running
+   business logic, and generating an HTML page dynamically.
+
+5. Sending the Response: The server sends back an HTTP response
+   containing a status code (e.g., 200 OK, 404 Not Found) along
+   with the actual content — typically HTML, along with linked
+   CSS and JavaScript files.
+
+6. Rendering by the Browser: The browser's rendering engine
+   parses the HTML to build the DOM (Document Object Model),
+   applies CSS to style it, and executes any JavaScript. It then
+   paints the final result on the screen for the user to see.
+
+7. Additional Requests: If the HTML references other resources
+   (images, fonts, stylesheets, scripts, API calls), the browser
+   sends separate requests for each of these as well, repeating
+   a similar request-response cycle.
+
+This entire process usually takes a few hundred milliseconds to
+a couple of seconds, depending on network speed, server response
+time, and page complexity.
+
+
+----------------------------------------------------------------
+Q4. Identify and list the tools required to set up a web
+    development environment. Explain the purpose of each.
+----------------------------------------------------------------
+
+1. Code Editor / IDE (e.g., VS Code, Sublime Text, WebStorm)
+   Purpose: Used to write, edit, and manage source code. Modern
+   editors like VS Code offer syntax highlighting, extensions,
+   debugging tools, and Git integration, making development much
+   faster and less error-prone.
+
+2. Web Browser with Developer Tools (e.g., Chrome, Firefox)
+   Purpose: Used to view and test how a webpage looks and
+   behaves. Built-in DevTools let developers inspect HTML/CSS,
+   debug JavaScript, monitor network requests, and test
+   responsiveness across screen sizes.
+
+3. Version Control System (e.g., Git, with GitHub/GitLab)
+   Purpose: Tracks changes to code over time, enables
+   collaboration between multiple developers, and allows
+   reverting to previous versions if something breaks.
+
+4. Package Manager (e.g., npm, yarn, pip)
+   Purpose: Manages external libraries and dependencies needed
+   for a project (e.g., installing React, Express, or FastAPI),
+   handling version control of those packages automatically.
+
+5. Local Development Server (e.g., Live Server extension, or a
+   framework's built-in dev server like Vite/Next.js dev mode)
+   Purpose: Lets you preview your website locally in real-time
+   as you code, often with auto-refresh on file save.
+
+6. Terminal / Command Line Interface
+   Purpose: Used to run commands — installing packages, starting
+   servers, running build scripts, and interacting with Git.
+
+7. Browser/API Testing Tools (e.g., Postman, Thunder Client)
+   Purpose: Used to test backend APIs directly by sending
+   requests (GET, POST, PUT, DELETE) without needing a frontend,
+   useful for debugging backend logic in isolation.
+
+8. Database & Database Client (e.g., PostgreSQL, MongoDB, with
+   a GUI tool like pgAdmin or MongoDB Compass)
+   Purpose: Stores and manages the application's persistent
+   data; the client tool lets developers view/edit data visually
+   instead of only through raw queries.
+
+9. Frameworks/Libraries (e.g., React, Django, Express, Bootstrap)
+   Purpose: Provide pre-built structures and reusable code so
+   developers don't have to build everything from scratch,
+   speeding up development significantly.
+
+
+----------------------------------------------------------------
+Q5. Explain what a web server is and give examples of commonly
+    used servers.
+----------------------------------------------------------------
+
+A web server is software (often running on dedicated hardware)
+that stores, processes, and delivers web content to clients
+over the internet using the HTTP/HTTPS protocol. When a browser
+requests a webpage, the web server is responsible for receiving
+that request, locating or generating the requested content, and
+sending it back as a response. Web servers can serve static
+files (like HTML, CSS, images) directly, or work alongside
+application servers to serve dynamically generated content
+(like pages built from database queries).
+
+Commonly Used Web Servers:
+
+1. Apache HTTP Server (Apache)
+   One of the oldest and most widely used open-source web
+   servers, known for its flexibility and extensive module
+   support (e.g., mod_rewrite, mod_ssl).
+
+2. Nginx
+   A high-performance, lightweight web server known for
+   efficiently handling a large number of concurrent
+   connections. Often used as a reverse proxy and load balancer
+   in addition to serving static content.
+
+3. Microsoft Internet Information Services (IIS)
+   A web server built by Microsoft for Windows Server
+   environments, commonly used to host ASP.NET applications.
+
+4. LiteSpeed Web Server (LSWS)
+   A high-performance, commercial alternative to Apache, popular
+   for its speed and compatibility with Apache configurations.
+
+5. Node.js (with Express.js)
+   While technically a JavaScript runtime rather than a
+   traditional web server, Node.js (paired with a framework like
+   Express) is widely used to build custom web servers that
+   handle both static files and dynamic API responses.
+
+
+----------------------------------------------------------------
+Q6. Define the roles of a frontend developer, backend developer,
+    and database administrator in a project.
+----------------------------------------------------------------
+
+Frontend Developer:
+A frontend developer is responsible for building the parts of
+an application that users directly see and interact with. Their
+role includes translating UI/UX designs (often from tools like
+Figma) into functional code using HTML, CSS, and JavaScript,
+ensuring the interface is responsive across devices, optimizing
+performance for fast load times, and implementing interactivity
+such as forms, animations, and dynamic content updates using
+frameworks like React or Vue.
+
+Backend Developer:
+A backend developer builds and maintains the server-side logic
+that powers an application. Their responsibilities include
+designing and building APIs that the frontend consumes, writing
+business logic (e.g., calculating prices, validating user
+input), managing authentication and authorization (login,
+permissions), integrating with databases and third-party
+services, and ensuring the application is secure, scalable, and
+performs efficiently under load.
+
+Database Administrator (DBA):
+A DBA is responsible for the design, implementation, security,
+and maintenance of an application's databases. Their duties
+include designing efficient database schemas, writing and
+optimizing queries for performance, managing backups and
+disaster recovery, controlling access permissions to protect
+sensitive data, monitoring database health, and ensuring data
+integrity and consistency, especially as the application scales
+and handles larger volumes of data.
+
+In a real project, these roles often collaborate closely: the
+frontend developer builds the interface, the backend developer
+exposes APIs to serve and receive data, and the DBA ensures that
+data is stored efficiently, securely, and reliably behind the
+scenes.
+
+
+----------------------------------------------------------------
+Q8. Explain the difference between static and dynamic websites.
+    Provide an example of each.
+----------------------------------------------------------------
+
+Static Websites:
+A static website consists of fixed content that is the same for
+every user every time it loads. The pages are pre-built HTML,
+CSS, and JavaScript files stored exactly as they will be
+displayed, with no server-side processing or database
+interaction required to generate the content. Because there's
+no backend computation needed, static sites are typically very
+fast to load, simple to host (even on free platforms like
+GitHub Pages), and highly secure due to their minimal attack
+surface. However, updating content requires manually editing and
+re-uploading the files.
+  Example: A simple personal portfolio website showcasing a
+  resume, projects, and contact info — the content stays the
+  same regardless of who visits or when.
+
+Dynamic Websites:
+A dynamic website generates content on the fly, often
+customized based on user input, database data, or real-time
+conditions. These sites use server-side languages/frameworks
+(like Python/Django, PHP, or Node.js) combined with a database
+to build pages dynamically each time they're requested. This
+allows for personalized experiences, like showing a logged-in
+user's name, their order history, or live updates — but it comes
+with added complexity in development and typically requires
+more powerful hosting infrastructure.
+  Example: An e-commerce site like Amazon, where the homepage
+  shows personalized product recommendations, live pricing, and
+  stock availability that differ for each user and change over
+  time.
+
+
+----------------------------------------------------------------
+Q9. Research and list five web browsers. Explain how rendering
+    engines differ between them.
+----------------------------------------------------------------
+
+Five Web Browsers and Their Rendering Engines:
+
+1. Google Chrome - uses the Blink rendering engine (a fork of
+   WebKit, developed by Google). Blink is known for strong
+   performance, wide standards support, and being the engine
+   that many other browsers are now built on top of.
+
+2. Mozilla Firefox - uses the Gecko rendering engine, developed
+   independently by Mozilla. Gecko is open-source and known for
+   strict adherence to web standards and strong developer tools,
+   maintaining engine independence from the Chromium ecosystem.
+
+3. Apple Safari - uses the WebKit rendering engine, originally
+   developed by Apple (Blink was actually forked from WebKit
+   back in 2013). WebKit is optimized specifically for Apple
+   devices, prioritizing battery efficiency and performance on
+   macOS/iOS.
+
+4. Microsoft Edge - previously used Microsoft's own EdgeHTML
+   engine, but since 2020 has switched to Blink (making it
+   Chromium-based, like Chrome). This means Edge now shares
+   very similar rendering behavior and extension support with
+   Chrome.
+
+5. Opera - also uses the Blink rendering engine, having switched
+   from its original Presto engine in 2013 to align with the
+   Chromium project, similar to Edge.
+
+How Rendering Engines Differ:
+A rendering engine is responsible for parsing HTML/CSS/JS and
+converting it into the visual page a user sees. Different
+engines can interpret ambiguous or non-standard code slightly
+differently, support different sets of CSS/JS features at
+different times, and have different performance characteristics
+for animations, layout calculations (like Flexbox/Grid), and
+JavaScript execution speed. This is why developers test websites
+across multiple browsers ("cross-browser testing") — a page
+might render perfectly in Chrome (Blink) but have subtle layout
+or feature issues in Firefox (Gecko) or Safari (WebKit), since
+each engine has its own quirks and update cycles for supporting
+new web standards.
+
+
+----------------------------------------------------------------
+Q10. Draw a labeled diagram showing the basic web architecture
+     flow — client, server, database, and APIs.
+----------------------------------------------------------------
+
+ASCII Diagram:
+
+  +-------------+        HTTP Request         +-----------------+
+  |             |  ------------------------->  |                 |
+  |   CLIENT    |                              |   WEB SERVER    |
+  | (Browser /  |                              |  (e.g., Nginx,  |
+  |  Mobile App)|  <-------------------------  |   Apache)       |
+  +-------------+       HTML/CSS/JS/JSON       +--------+--------+
+                                                         |
+                                                         | Forwards
+                                                         | request
+                                                         v
+                                                +-----------------+
+                                                |   APPLICATION   |
+                                                |  SERVER / API   |
+                                                | (e.g., FastAPI, |
+                                                |  Express, Django)|
+                                                +--------+--------+
+                                                         |
+                                                    Query| /Response
+                                                         v
+                                                +-----------------+
+                                                |    DATABASE     |
+                                                | (e.g., Postgre  |
+                                                |  SQL, MongoDB)  |
+                                                +-----------------+
+
+Description of Flow:
+1. CLIENT: The user's browser or mobile app sends an HTTP
+   request when the user performs an action (loading a page,
+   submitting a form, clicking a button).
+
+2. WEB SERVER: Receives the incoming request first. It may
+   directly serve static assets (HTML, CSS, JS, images), or
+   forward the request to the application server if dynamic
+   processing is needed.
+
+3. APPLICATION SERVER / API LAYER: Contains the business logic
+   of the application. It receives the forwarded request,
+   determines what needs to happen (e.g., "fetch user profile,"
+   "process a payment"), and communicates with the database
+   through an API endpoint (e.g., GET /api/users/123).
+
+4. DATABASE: Stores and manages all persistent data (users,
+   products, orders, etc.). It receives queries from the
+   application server, retrieves or updates the relevant data,
+   and sends the result back.
+
+5. RESPONSE PATH: The database sends data back to the
+   application server, which formats it (often as JSON) and
+   sends it back through the web server to the client. The
+   client's browser then renders this data visually for the
+   user (e.g., updating the page without a full reload, in a
+   modern API-driven app).
+
+This layered architecture (Client -> Web Server -> Application
+Server/API -> Database) allows each component to be scaled,
+maintained, and secured independently — a key principle behind
+modern, production-grade web applications.
+
+================================================================
+================================================================
