@@ -1,0 +1,149 @@
+/* Reset & Base Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 60px 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+  color: #f8fafc;
+}
+
+.header p {
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+/* Flexbox container ensuring 3 equal columns and equal height */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Maintains equal height across all cards */
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card base styling and CSS transition setup */
+.pricing-card {
+  flex: 1;
+  background-color: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 14px;
+  padding: 45px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+  /* CSS transitions for smooth hover animation */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: enlarges box and changes background color */
+.pricing-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background-color: #273549;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Distinctive border and highlight for popular plan */
+.highlighted-plan {
+  border: 2px solid #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+.popular-tag {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 5px 16px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.plan-name {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #f8fafc;
+}
+
+.price-section {
+  margin-bottom: 30px;
+}
+
+.currency {
+  font-size: 22px;
+  vertical-align: top;
+  color: #38bdf8;
+}
+
+.amount {
+  font-size: 50px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.period {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.features-list {
+  list-style: none;
+  margin-bottom: 35px;
+  flex-grow: 1;
+}
+
+.features-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #334155;
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+/* Styled link buttons (<a> tag) */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 8px;
+  background-color: #334155;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #475569;
+}
+
+.btn-primary {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+.btn-primary:hover {
+  background-color: #0284c7;
+  color: #ffffff;
+}

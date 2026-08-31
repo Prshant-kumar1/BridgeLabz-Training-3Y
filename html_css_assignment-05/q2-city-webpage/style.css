@@ -1,0 +1,124 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  color: #ffffff;
+  background-color: #111111;
+}
+
+/* Header & Nav Styling */
+.header {
+  background-color: #0f172a;
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 3px solid #f59e0b;
+}
+
+.header h1 {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  color: #fbbf24;
+}
+
+.nav a {
+  color: #f3f4f6;
+  margin: 0 18px;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #fbbf24;
+}
+
+/* Section Box Model & Spacing */
+.section {
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.content-box {
+  background-color: rgba(15, 23, 42, 0.85);
+  padding: 50px;
+  border: 2px solid #f59e0b;
+  border-radius: 12px;
+  max-width: 750px;
+  text-align: center;
+  margin: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Differing Headings font-sizes and font-weights */
+h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #fbbf24;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #e0e7ff;
+}
+
+h4 {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #38bdf8;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #f1f5f9;
+}
+
+/* Section 1: Linear Gradient Overlay with Parallax 1 */
+.section-linear {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(180, 83, 9, 0.8)), 
+              url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1200') center/cover no-repeat;
+}
+
+.parallax-1 {
+  background-attachment: fixed; /* Parallax effect 1 */
+}
+
+/* Section 2: Radial Gradient Background */
+.section-radial {
+  background: radial-gradient(circle at center, #4c1d95 0%, #0f172a 100%);
+}
+
+/* Section 3: Parallax 2 (Fixed background image attachment) */
+.section-solid {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1200') center/cover no-repeat;
+}
+
+.parallax-2 {
+  background-attachment: fixed; /* Parallax effect 2 */
+}
+
+.footer {
+  background-color: #090d16;
+  text-align: center;
+  padding: 30px;
+  font-size: 16px;
+  color: #94a3b8;
+  border-top: 1px solid #1e293b;
+}

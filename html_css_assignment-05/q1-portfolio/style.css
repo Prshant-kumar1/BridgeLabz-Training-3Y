@@ -1,0 +1,104 @@
+/* Reset & Box Model */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styled with flexbox for sticky footer execution */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #0f172a; /* Custom dark slate background */
+  color: #f8fafc; /* High contrast white-blue text */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* CSS vh unit */
+}
+
+/* Header fixed at top of viewport */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* CSS % unit */
+  height: 4rem; /* CSS rem unit */
+  background-color: #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%; /* CSS % unit */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5em; /* CSS em unit */
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 24px; /* CSS px unit */
+}
+
+.nav-links a {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* Content Area pushing footer to bottom */
+.content {
+  flex: 1;
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  padding: 2.5em;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #38bdf8;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);
+}
+
+.bio h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.bio p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+/* Footer layout anchoring */
+.footer {
+  background-color: #1e293b;
+  text-align: center;
+  padding: 1.25rem 0;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  border-top: 1px solid #334155;
+}
