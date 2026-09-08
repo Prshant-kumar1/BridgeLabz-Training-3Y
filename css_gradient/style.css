@@ -1,0 +1,34 @@
+.container{
+    width: 450px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    direction: column;
+    
+}
+.card{
+    width: 200px;
+    height: 350px;
+    border: 1px solid black;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+    background-image: repeating-linear-gradient(to right, #ff0000, #ffff00);
+}
+.btn{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}
+.btn:hover{
+    color: gray;
+    transform: scale(1.1);
+}
