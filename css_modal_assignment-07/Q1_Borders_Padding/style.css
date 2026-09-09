@@ -1,0 +1,105 @@
+/* Q1: Borders and Padding Demonstration */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    color: #172033;
+    background: #f5f7fb;
+}
+
+header,
+footer {
+    padding: 24px;
+    text-align: center;
+    color: #ffffff;
+    background: #172554;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 5%;
+}
+
+/* Flexbox places all demonstration boxes horizontally. */
+.box-container {
+    width: min(1200px, 100%);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+/* Shared box styling. Each example below changes border and padding. */
+.demo-box {
+    width: 200px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #ffffff;
+    border-color: #2563eb;
+    transition: border-color 0.3s ease;
+}
+
+.demo-box h2 {
+    margin-bottom: 12px;
+    font-size: 1.15rem;
+}
+
+.demo-box p {
+    color: #5b6475;
+}
+
+/* Different border styles and padding values. */
+.solid {
+    padding: 20px;
+    border: 4px solid #2563eb;
+}
+
+.dashed {
+    padding: 30px;
+    border: 4px dashed #2563eb;
+}
+
+.double {
+    padding: 15px;
+    border: 6px double #2563eb;
+}
+
+.groove {
+    padding: 40px;
+    border: 6px groove #2563eb;
+}
+
+.rounded {
+    padding: 25px;
+    border: 4px solid #2563eb;
+    border-radius: 25px;
+}
+
+/* Hover changes only the border color, with a smooth transition. */
+.demo-box:hover {
+    border-color: #dc2626;
+}
+
+footer {
+    font-size: 0.9rem;
+}

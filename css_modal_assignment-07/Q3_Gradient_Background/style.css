@@ -1,0 +1,78 @@
+/* Q3: Gradient Background Webpage */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background: #0f172a;
+}
+
+/* Fixed header stays at the top while the page scrolls. */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 18px 5%;
+    text-align: center;
+    background: rgba(15, 23, 42, 0.92);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.gradient-section {
+    min-height: 100vh;
+    padding: 120px 8% 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.content {
+    width: min(700px, 100%);
+    padding: 45px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.28);
+}
+
+.content h2 {
+    margin-bottom: 15px;
+    font-size: 2.3rem;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.content p {
+    line-height: 1.7;
+}
+
+/* Linear gradient moves between colors along a direction. */
+.linear {
+    background: linear-gradient(135deg, #1d4ed8, #7c3aed, #db2777);
+    background-attachment: fixed; /* Parallax-like effect. */
+}
+
+/* Radial gradient spreads from the center outward. */
+.radial {
+    background: radial-gradient(circle at center, #0f766e, #164e63 45%, #0f172a);
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+    background: rgba(15, 23, 42, 0.92);
+}

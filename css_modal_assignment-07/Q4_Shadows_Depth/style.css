@@ -1,0 +1,103 @@
+/* Q4: Shadows and Depth Effect Layout */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #172033;
+    background: #f1f5f9;
+}
+
+header {
+    padding: 50px 20px 30px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    /* Text shadow adds depth to the heading. */
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+header p {
+    color: #64748b;
+}
+
+/* Flexbox arranges all three cards in a single row. */
+.card-container {
+    width: min(1100px, 90%);
+    margin: 30px auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 25px;
+}
+
+.profile-card {
+    flex: 1;
+    min-height: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    border-radius: 18px;
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar {
+    width: 78px;
+    height: 78px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-weight: 800;
+}
+
+.profile-card p {
+    color: #64748b;
+}
+
+.profile-card span {
+    margin-top: 5px;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+/* Three intentionally different box-shadow styles. */
+.soft-shadow {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.sharp-shadow {
+    box-shadow: 8px 8px 0 rgba(37, 99, 235, 0.22);
+}
+
+.deep-shadow {
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.22);
+}
+
+/* On hover, cards lift and receive a larger shadow. */
+.profile-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 45px rgba(15, 23, 42, 0.25);
+}
+
+@media (max-width: 750px) {
+    .card-container {
+        flex-direction: column;
+        width: min(480px, 90%);
+    }
+}

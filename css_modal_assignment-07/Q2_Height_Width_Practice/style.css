@@ -1,0 +1,106 @@
+/* Q2: Height and Width Practice */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #172033;
+    background: #eef2f7;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 5%;
+}
+
+.page-header {
+    width: min(850px, 100%);
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.page-header h1 {
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #596579;
+}
+
+/* Flexbox centers every box horizontally and vertically. */
+.size-container {
+    width: min(1100px, 100%);
+    min-height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Common box styling. */
+.size-box {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 16px;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.size-box h2 {
+    margin-bottom: 10px;
+}
+
+.box-one {
+    /* Fixed pixel dimensions. */
+    width: 220px;
+    height: 180px;
+    background: #2563eb;
+}
+
+.box-two {
+    /* Percentage width + em-based minimum height. */
+    width: 42%;
+    min-height: 14em;
+    background: #059669;
+}
+
+.box-three {
+    /* Viewport height + maximum width. */
+    width: 35%;
+    height: 25vh;
+    max-width: 28em;
+    min-height: 170px;
+    background: #c2410c;
+    overflow: auto; /* Demonstrates overflow handling. */
+}
+
+.long-text {
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 750px) {
+    .size-container {
+        flex-direction: column;
+    }
+
+    .box-one,
+    .box-two,
+    .box-three {
+        width: min(90%, 420px);
+    }
+}

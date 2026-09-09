@@ -1,0 +1,165 @@
+/* Q5: Advanced CSS Selectors
+   The comments below explain each selector type used in this page. */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #172033;
+    background: #f8fafc;
+}
+
+header,
+footer {
+    padding: 24px;
+    text-align: center;
+    color: white;
+    background: #1e293b;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+main {
+    flex: 1;
+    width: min(900px, 92%);
+    margin: 0 auto;
+    padding: 45px 0;
+}
+
+.selector-demo {
+    padding: 30px;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.selector-demo > h2 {
+    margin-bottom: 25px;
+    color: #1d4ed8;
+}
+
+/* Child combinator (>): selects only direct children of .items. */
+.items > li {
+    padding: 10px 14px;
+    list-style: none;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* :nth-child() pseudo-class: styles selected list positions. */
+.items > li:nth-child(odd) {
+    background: #eff6ff;
+}
+
+/* :nth-child() can target a specific child. */
+.items > li:nth-child(2) {
+    font-weight: 800;
+}
+
+/* Attribute selector: matches only text inputs. */
+input[type="text"] {
+    border: 2px solid #2563eb;
+}
+
+/* Attribute selector: matches links whose href begins with https. */
+a[href^="https"] {
+    color: #047857;
+    font-weight: 700;
+}
+
+/* Descendant combinator (space): targets p anywhere inside .combinator-demo. */
+.combinator-demo p {
+    margin-top: 10px;
+}
+
+/* Child combinator (>): targets only direct paragraph children. */
+.combinator-demo > p {
+    padding: 8px;
+    border-left: 4px solid #2563eb;
+}
+
+/* Adjacent sibling combinator (+): targets the first p directly after the div. */
+.combinator-demo div + p {
+    background: #fef3c7;
+}
+
+/* General sibling combinator (~): targets all p elements after the div. */
+.combinator-demo div ~ p {
+    text-decoration: underline;
+}
+
+/* :hover pseudo-class changes the button when the pointer is over it. */
+button:hover {
+    background: #1d4ed8;
+    color: white;
+}
+
+/* :focus pseudo-class improves keyboard/form focus visibility. */
+input:focus,
+button:focus {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+/* ::before pseudo-element adds content before each list item. */
+.items > li::before {
+    content: "✓ ";
+    color: #16a34a;
+    font-weight: 800;
+}
+
+/* ::after pseudo-element adds a marker after HTTPS links. */
+a[href^="https"]::after {
+    content: " ↗";
+}
+
+/* A simple form layout using Flexbox. */
+.form-area {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+button,
+.form-area a {
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+input {
+    border: 1px solid #cbd5e1;
+}
+
+button {
+    border: none;
+    background: #334155;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-area a {
+    display: inline-block;
+    text-decoration: none;
+    background: #f1f5f9;
+}
+
+.combinator-demo {
+    margin-top: 30px;
+}
+
+.combinator-demo div {
+    padding: 12px;
+    background: #f8fafc;
+}
