@@ -1,0 +1,126 @@
+/* Q4: Dashboard using CSS Grid */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.dashboard {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "header header"
+        "sidebar main";
+}
+
+.dashboard-header {
+    grid-area: header;
+    padding: 22px 30px;
+    background: #0f172a;
+    color: white;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 6px;
+}
+
+.dashboard-header p {
+    color: #cbd5e1;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    padding: 25px 18px;
+    background: #1e293b;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar a {
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.sidebar a:hover {
+    background: #334155;
+}
+
+.dashboard-main {
+    grid-area: main;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+    gap: 20px; /* Grid gap for spacing */
+}
+
+.dashboard-box {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 14px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
+}
+
+.dashboard-box h2 {
+    margin-bottom: 10px;
+}
+
+.dashboard-box p {
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.box-large {
+    grid-column: span 2;
+}
+
+@media (max-width: 750px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main";
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-main {
+        grid-template-columns: 1fr;
+    }
+
+    .box-large {
+        grid-column: span 1;
+    }
+}
