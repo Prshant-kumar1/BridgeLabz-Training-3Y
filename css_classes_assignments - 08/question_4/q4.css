@@ -1,0 +1,54 @@
+/* Global reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { background: #fdfdfd; color: #333; line-height: 1.6; }
+header, footer { background: #2c3e50; color: white; text-align: center; padding: 20px; }
+main { padding: 30px; max-width: 800px; margin: 0 auto; }
+section { margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
+h2 { margin-bottom: 15px; color: #2980b9; }
+
+/* 1. Element Selector */
+p { margin-bottom: 10px; }
+
+/* 2. Class Selector */
+.highlight {
+    background-color: #f1c40f;
+    padding: 5px;
+    font-weight: bold;
+}
+
+/* 3. ID Selector */
+#main-content {
+    border: 2px dashed #bdc3c7;
+}
+
+/* 4. Attribute Selector */
+input[type="text"] {
+    border: 2px solid #27ae60;
+    padding: 8px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* 5. Combinators */
+
+/* Descendant Combinator (space): Any <p> inside .intro */
+.intro p {
+    font-size: 1.1em;
+}
+
+/* Child Combinator (>): Only direct <p> children of .parent-box */
+.parent-box > p {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Adjacent Sibling Combinator (+): The <p> immediately after .parent-box */
+.parent-box + p {
+    text-decoration: underline;
+    color: #8e44ad;
+}
+
+/* General Sibling Combinator (~): All <p> siblings after .parent-box */
+.parent-box ~ p {
+    font-style: italic;
+}

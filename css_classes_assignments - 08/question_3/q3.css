@@ -1,0 +1,69 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #1a1a2e; color: #fff; text-align: center; }
+header { padding: 40px 20px; }
+
+/* Grid Layout for Gallery */
+.gallery-grid {
+    display: grid;
+    /* Automatically fit as many columns as possible, min width 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-card {
+    background-color: #16213e;
+    border-radius: 12px;
+    overflow: hidden; /* Ensures child elements respect border-radius */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3/2;
+}
+
+/* Image styles and transition */
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Semi-transparent dark overlay */
+.overlay {
+    position: absolute;
+    inset: 0; /* Shorthand for top:0; right:0; bottom:0; left:0; */
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover Effects */
+.image-card:hover img {
+    transform: scale(1.1); /* Scale up image */
+}
+.image-card:hover .overlay {
+    opacity: 1; /* Fade in overlay */
+}
+
+figcaption {
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e94560;
+}
+
+/* Responsive Behavior */
+@media (max-width: 700px) {
+    .gallery-grid {
+        /* Force single column below 700px */
+        grid-template-columns: 1fr;
+    }
+}

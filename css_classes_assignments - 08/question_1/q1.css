@@ -1,0 +1,51 @@
+/* Global reset and basic styling */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+body { background-color: #f8f9fa; color: #333; }
+header, footer { text-align: center; padding: 20px; background-color: #343a40; color: white; }
+
+/* Flexbox Layout */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+.demo-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 250px;
+}
+.demo-box p { margin-top: 15px; font-size: 0.9em; color: #666; }
+
+/* 1. :hover */
+.hover-link {
+    display: inline-block; padding: 10px 20px;
+    background-color: #007bff; color: white; text-decoration: none; border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.hover-link:hover { background-color: #0056b3; }
+
+/* 2. :focus */
+.focus-input {
+    padding: 10px; border: 2px solid #ccc; border-radius: 4px; outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.focus-input:focus { border-color: #28a745; box-shadow: 0 0 5px rgba(40,167,69,0.5); }
+
+/* 3. :active */
+.active-btn {
+    padding: 10px 20px; background-color: #dc3545; color: white; border: none;
+    border-radius: 4px; cursor: pointer; transition: transform 0.1s;
+}
+.active-btn:active { transform: scale(0.95); background-color: #c82333; }
+
+/* 4. :nth-child */
+.nth-list { list-style: none; padding: 0; }
+.nth-list li { padding: 8px; margin: 2px 0; background: #e9ecef; }
+.nth-list li:nth-child(even) { background: #17a2b8; color: white; } /* Even items */

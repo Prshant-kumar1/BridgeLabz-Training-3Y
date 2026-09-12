@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Classes Demo</title>
+    <link rel="stylesheet" href="q1.css">
+</head>
+<body>
+    <header>
+        <h1>Pseudo-Classes Demonstration</h1>
+    </header>
+    <main>
+        <section class="flex-container">
+            <!-- :hover example -->
+            <div class="demo-box">
+                <a href="#" class="hover-link">Hover Me</a>
+                <p>Changes color on <code>:hover</code></p>
+            </div>
+
+            <!-- :focus example -->
+            <div class="demo-box">
+                <input type="text" class="focus-input" placeholder="Click to focus">
+                <p>Highlights border on <code>:focus</code></p>
+            </div>
+
+            <!-- :active example -->
+            <div class="demo-box">
+                <button class="active-btn">Click and Hold</button>
+                <p>Scales down on <code>:active</code></p>
+            </div>
+
+            <!-- :nth-child example -->
+            <div class="demo-box">
+                <ul class="nth-list">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+                <p>Alternates colors using <code>:nth-child()</code></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>CSS Pseudo-classes practice</p>
+    </footer>
+</body>
+</html>

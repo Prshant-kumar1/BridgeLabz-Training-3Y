@@ -1,0 +1,61 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+body { background-color: #eef2f3; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Center all examples using Flexbox */
+.tooltip-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 50px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+/* Tooltip Structure */
+.tooltip-wrapper {
+    position: relative; /* Context for absolute positioning of tooltip */
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Trigger Element Styles */
+.icon { font-size: 2rem; }
+.text-trigger { font-weight: bold; border-bottom: 2px dotted #3498db; color: #2c3e50; }
+.action-btn { padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 4px; }
+
+/* Tooltip Styles */
+.tooltip {
+    position: absolute;
+    bottom: 130%; /* Position above the element */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    pointer-events: none; /* Prevent tooltip from blocking mouse events */
+    
+    /* Animation settings */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Tooltip Arrow */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Hover Effect to Show Tooltip */
+.tooltip-wrapper:hover .tooltip {
+    opacity: 1;
+}
