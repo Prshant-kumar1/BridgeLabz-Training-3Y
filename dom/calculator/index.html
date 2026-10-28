@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .btn-container{
+        width: 400px;
+        height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .btn{
+        font-family: 'Courier New', Courier, monospace;
+        width: 100px;
+        font-size: 2rem;
+        border: 1px solid #ccc;
+        background-color: pink;
+        cursor: pointer;
+        border-radius: 15px;
+    }
+    .btn:hover {
+        background-color: #fff0f5;
+    }
+
+    .input{
+        width: 400px;
+        height: 70px;
+        font-size: 3rem;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        background-color: pink;
+        cursor: pointer;
+        overflow-x: auto;
+
+    }
+
+    .btn:hover {
+        background-color: #fff0f5;
+    }
+
+
+</style>
+
+<body>
+    <input class="input" placeholder="0" disabled>
+    <div class="btn-container">
+        <button class="btn">7</button>
+        <button class="btn">8</button>
+        <button class="btn">9</button>
+        <button class="btn">/</button>
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+        <button class="btn">*</button>
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn">-</button>
+        <button class="btn">0</button>
+        <button class="btn">+</button>
+        <button class="btn">=</button>
+        <button class="btn">CE</button>
+
+    </div>
+
+</body>
+
+<script>
+    const inputEl = document.querySelector('.input');
+    const btns = document.querySelectorAll('.btn');
+
+    btns.forEach((ele) => {
+        ele.addEventListener('click', () => {
+            if(ele.textContent === '='){
+                inputEl.value = eval(inputEl.value);
+                return;
+            }
+            if (ele.textContent === 'CE') {
+                inputEl.value = '';
+            } else {
+                inputEl.value += ele.textContent;
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        if (key === 'Enter') {
+            inputEl.value = eval(inputEl.value);
+        } else if (key === 'Backspace') {
+            inputEl.value = inputEl.value.slice(0, -1);
+        } else if (/[0-9+\-*/]/.test(key)) {
+            inputEl.value += key;
+        }
+    });
+    
+</script>
+
+</html>

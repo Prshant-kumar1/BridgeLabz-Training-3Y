@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+
+<script>
+    const box = document.querySelector('.box');
+
+    document.addEventListener('keydown', () => {
+        if (event.key === 'ArrowUp') {
+            box.style.top = (box.offsetTop - 10) + 'px';
+        } else if (event.key === 'ArrowDown') {
+            box.style.top = (box.offsetTop + 10) + 'px';
+        } else if (event.key === 'ArrowLeft') {
+            box.style.left = (box.offsetLeft - 10) + 'px';
+        } else if (event.key === 'ArrowRight') {
+            box.style.left = (box.offsetLeft + 10) + 'px';
+        }
+    });
+</script>
+</html>
