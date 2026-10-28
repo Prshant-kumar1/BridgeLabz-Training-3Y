@@ -1,0 +1,178 @@
+/* Question 5: Filter Cards with Animation */
+
+:root {
+    --ink: #20242d;
+    --muted: #6b7280;
+    --paper: #f7f7f5;
+    --accent: #bd5d3b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-header {
+    padding: 3.5rem 1.25rem 2.5rem;
+    text-align: center;
+}
+
+.eyebrow {
+    margin: 0 0 0.75rem;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.045em;
+}
+
+.page-header > p:last-child {
+    max-width: 40rem;
+    margin: 1rem auto 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+main {
+    width: min(1120px, 100% - 3rem);
+    margin: 0 auto 3.5rem;
+}
+
+/* The cards use Flexbox and fade in when the page loads. */
+.profile-list {
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+.profile-card {
+    flex: 1 1 0;
+    overflow: hidden;
+    border: 1px solid #e6e2dc;
+    border-radius: 1.1rem;
+    background: #ffffff;
+    box-shadow: 0 14px 34px rgb(40 31 21 / 7%);
+    animation: fade-in 750ms ease both;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.profile-card:nth-child(2) {
+    animation-delay: 120ms;
+}
+
+.profile-card:nth-child(3) {
+    animation-delay: 240ms;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 42px rgb(40 31 21 / 14%);
+}
+
+.profile-card img {
+    display: block;
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    transition: filter 350ms ease, transform 350ms ease;
+}
+
+/* Different initial filters demonstrate CSS filter functions. */
+.profile-one img {
+    filter: grayscale(100%);
+}
+
+.profile-two img {
+    filter: sepia(85%);
+}
+
+.profile-three img {
+    filter: saturate(45%) contrast(115%);
+}
+
+.profile-card:hover img,
+.profile-card:focus-within img {
+    filter: none;
+    transform: scale(1.025);
+}
+
+.profile-content {
+    padding: 1.5rem;
+}
+
+.role {
+    margin: 0 0 0.65rem;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+.profile-content h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.bio {
+    margin: 0.75rem 0 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-footer {
+    padding: 1.5rem 1rem;
+    border-top: 1px solid #e6e2dc;
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.page-footer p {
+    margin: 0;
+}
+
+/* Stack all profile cards vertically below 800px. */
+@media (max-width: 799px) {
+    main {
+        width: min(100% - 2rem, 35rem);
+    }
+
+    .profile-list {
+        flex-direction: column;
+    }
+
+    .profile-card img {
+        height: 320px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

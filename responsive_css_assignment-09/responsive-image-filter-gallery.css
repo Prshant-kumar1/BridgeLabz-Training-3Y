@@ -1,0 +1,160 @@
+/* Question 1: Responsive Image Filter Gallery */
+
+:root {
+    color-scheme: light;
+    --ink: #17212b;
+    --muted: #627080;
+    --paper: #f4f7fa;
+    --accent: #3766e8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-header {
+    padding: 3.5rem 1.25rem 2rem;
+    text-align: center;
+}
+
+.eyebrow {
+    margin: 0 0 0.65rem;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    letter-spacing: -0.04em;
+}
+
+.intro {
+    max-width: 38rem;
+    margin: 0.9rem auto 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+main {
+    width: min(1200px, 100% - 2.5rem);
+    margin: 0 auto 3rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgb(26 42 67 / 7%);
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: filter 450ms ease, transform 450ms ease;
+}
+
+/* Each image begins with a different CSS filter. */
+.filter-blur {
+    filter: blur(2px);
+}
+
+.filter-grayscale {
+    filter: grayscale(100%);
+}
+
+.filter-sepia {
+    filter: sepia(100%);
+}
+
+.filter-brightness {
+    filter: brightness(65%);
+}
+
+.filter-contrast {
+    filter: contrast(170%);
+}
+
+.filter-hue {
+    filter: hue-rotate(125deg);
+}
+
+/* Hovering restores the original image smoothly. */
+.gallery-item:hover img,
+.gallery-item:focus-within img {
+    filter: none;
+    transform: scale(1.025);
+}
+
+.gallery-item figcaption {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1rem 1.1rem;
+    font-size: 0.98rem;
+    font-weight: 700;
+}
+
+.gallery-item figcaption span {
+    color: var(--accent);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+.page-footer {
+    padding: 1.4rem 1rem;
+    border-top: 1px solid #e2e8f0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.page-footer p {
+    margin: 0;
+}
+
+/* Force a single-column gallery on narrow screens. */
+@media (max-width: 600px) {
+    .page-header {
+        padding-top: 2.5rem;
+    }
+
+    main {
+        width: min(100% - 2rem, 28rem);
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 240px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

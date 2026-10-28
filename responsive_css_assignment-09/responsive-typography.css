@@ -1,0 +1,210 @@
+/* Question 4: Responsive Typography using relative units and clamp() */
+
+:root {
+    --ink: #202638;
+    --muted: #667086;
+    --accent: #6650d9;
+    --paper: #faf9ff;
+    --line: #e8e4f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem clamp(1.25rem, 5vw, 4.5rem);
+    border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+    color: var(--ink);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    text-decoration: none;
+}
+
+.wordmark span {
+    color: var(--accent);
+}
+
+.site-header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+.type-showcase {
+    width: min(900px, 100% - 3rem);
+    margin: 0 auto;
+    padding: clamp(4rem, 10vw, 8rem) 0 4rem;
+    text-align: center;
+}
+
+.eyebrow {
+    margin: 0 0 1.1rem;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+/* Required responsive heading size. */
+h1 {
+    margin: 0 auto;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    letter-spacing: -0.045em;
+    line-height: 1.16;
+}
+
+/* Required responsive paragraph size. */
+p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.lead {
+    max-width: 760px;
+    margin: 1.6rem auto 0;
+    color: #49536b;
+    line-height: 1.75;
+}
+
+.supporting-copy {
+    max-width: 640px;
+    margin: 1.3rem auto 0;
+    color: var(--muted);
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.8;
+}
+
+code {
+    padding: 0.12em 0.35em;
+    border-radius: 0.35rem;
+    background: #efecff;
+    color: #4935b5;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 0.9em;
+}
+
+.example-link {
+    display: inline-block;
+    margin-top: 1.7rem;
+    padding: 0.85rem 1.2rem;
+    border-radius: 0.7rem;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.example-link:hover {
+    transform: translateY(-2px);
+    background: #4f3cc1;
+}
+
+.example-link span {
+    padding-left: 0.35rem;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: min(1000px, 100% - 3rem);
+    margin: 0 auto 3.5rem;
+}
+
+.details p {
+    flex: 1 1 220px;
+    margin: 0;
+    padding: 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    background: #ffffff;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.details strong {
+    color: var(--ink);
+}
+
+.site-footer {
+    padding: 1.4rem 1rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* Improve line length and vertical rhythm on screens below 700px. */
+@media (max-width: 700px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.55rem;
+    }
+
+    .type-showcase {
+        width: min(100% - 2rem, 38rem);
+        padding-top: 3.5rem;
+        padding-bottom: 3rem;
+    }
+
+    h1 {
+        line-height: 1.25;
+    }
+
+    .lead,
+    .supporting-copy {
+        margin-top: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .details {
+        width: min(100% - 2rem, 38rem);
+        flex-direction: column;
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

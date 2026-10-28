@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A responsive homepage layout made with Flexbox.">
+    <title>Responsive Web Design Layout</title>
+    <link rel="stylesheet" href="responsive-web-design-layout.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="#home" aria-label="Northstar home">northstar<span>.</span></a>
+        <nav aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section class="hero" aria-labelledby="hero-title">
+            <p class="eyebrow">A little more room to grow</p>
+            <h1 id="hero-title">Good ideas deserve<br>space to take off.</h1>
+            <p class="hero-copy">A simple, responsive layout that keeps the important things clear on every screen.</p>
+        </section>
+
+        <section id="features" class="features" aria-label="Main features">
+            <article class="feature-box">
+                <div class="feature-number">01</div>
+                <h2>Stay focused</h2>
+                <p>Keep your goals visible and your next step easy to find.</p>
+            </article>
+            <article class="feature-box featured">
+                <div class="feature-number">02</div>
+                <h2>Work together</h2>
+                <p>Bring people and ideas together in one thoughtful space.</p>
+            </article>
+            <article class="feature-box">
+                <div class="feature-number">03</div>
+                <h2>Keep growing</h2>
+                <p>Build steady habits that turn small wins into progress.</p>
+            </article>
+        </section>
+
+        <section id="about" class="about" aria-label="About this page">
+            <p>Designed to feel just as comfortable on a phone as it does on a desktop.</p>
+        </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+        <p>© 2026 Northstar · A practice in responsive design</p>
+    </footer>
+</body>
+</html>

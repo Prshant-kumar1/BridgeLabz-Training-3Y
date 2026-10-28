@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A responsive typography example using clamp and relative units.">
+    <title>Responsive Typography</title>
+    <link rel="stylesheet" href="responsive-typography.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="wordmark" href="#main">type<span>/</span>scale</a>
+        <p>CSS Practice · Question 4</p>
+    </header>
+
+    <main id="main">
+        <section class="type-showcase" aria-labelledby="showcase-title">
+            <p class="eyebrow">Responsive by design</p>
+            <h1 id="showcase-title">Words that fit every screen.</h1>
+            <p class="lead">Good typography should feel natural on a large monitor, a laptop, or a phone. The <code>clamp()</code> function gives text a flexible size while keeping it within readable minimum and maximum limits.</p>
+            <p class="supporting-copy">Resize the browser window to see the heading and paragraph scale smoothly. The layout uses relative units, balanced spacing, and centered text without JavaScript.</p>
+            <a class="example-link" href="#details">Explore the example <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section id="details" class="details" aria-label="Typography details">
+            <p><strong>Minimum:</strong> Keeps text comfortable on narrow screens.</p>
+            <p><strong>Flexible:</strong> Uses the viewport width to scale between limits.</p>
+            <p><strong>Maximum:</strong> Prevents text from growing too large.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Responsive typography with CSS <code>clamp()</code>.</p>
+    </footer>
+</body>
+</html>
