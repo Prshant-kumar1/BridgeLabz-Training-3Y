@@ -1,0 +1,26 @@
+/* Custom styling layered on top of Bootstrap 5. */
+:root { --northstar-navy: #101b36; --northstar-blue: #78e4cf; --northstar-ink: #17213a; }
+body { color: var(--northstar-ink); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+header, footer { background: var(--northstar-navy); }
+.navbar-brand { letter-spacing: -.04em; font-size: 1.45rem; }
+.brand-dot, .hero h1 span { color: var(--northstar-blue); }
+.nav-link { color: #d7deed; font-size: .95rem; }
+.nav-link:hover { color: var(--northstar-blue); }
+.hero { color: white; background: radial-gradient(circle at 80% 20%, #243d67 0, transparent 32%), linear-gradient(135deg, #101b36, #182b4b); }
+.eyebrow { color: var(--northstar-blue); font-size: .75rem; font-weight: 800; letter-spacing: .16em; }
+.hero-copy { color: #d5ddec; max-width: 38rem; }
+.btn-brand { background: var(--northstar-blue); border-color: var(--northstar-blue); color: #102039; font-weight: 700; }
+.btn-brand:hover { background: #a0f4e4; border-color: #a0f4e4; color: #102039; transform: translateY(-2px); }
+.btn { transition: transform .2s ease, background-color .2s ease; }
+.hero-card { padding: 2rem; border: 1px solid #ffffff24; border-radius: 1.5rem; background: #ffffff0b; box-shadow: 0 25px 80px #0002; }
+.tracking { letter-spacing: .12em; font-size: .7rem; color: #cbd5e8; }
+.status-pill { padding: .4rem .7rem; border-radius: 2rem; color: #a0f4e4; background: #78e4cf1c; font-size: .75rem; }
+.metric { font-size: clamp(2.8rem, 7vw, 4.7rem); font-weight: 800; letter-spacing: -.06em; }
+.chart-bars { height: 150px; border-bottom: 1px solid #ffffff30; }
+.chart-bars span { flex: 1; border-radius: .4rem .4rem 0 0; background: linear-gradient(180deg, #78e4cf, #4c9fc2); }
+.text-brand { color: #258a7c; }
+.benefit-card { border: 1px solid #e6ebf2; border-radius: 1.1rem; transition: transform .2s ease, box-shadow .2s ease; }
+.benefit-card:hover { transform: translateY(-5px); box-shadow: 0 1rem 2rem #14203a12; }
+.feature-icon { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: .8rem; background: #e2faf4; color: #167767; font-weight: 800; }
+.cta-section { background: #182b4b; color: white; }
+@media (max-width: 575.98px) { .hero-card { padding: 1.35rem; } .navbar-nav { gap: .5rem !important; } .nav-link { font-size: .85rem; } }

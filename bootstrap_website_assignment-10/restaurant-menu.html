@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Olive & Ember — Today's Menu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="restaurant-menu.css">
+</head>
+<body>
+  <header class="restaurant-header">
+    <nav class="navbar navbar-expand">
+      <div class="container py-2">
+        <a class="navbar-brand fw-bold" href="#">olive <span>&</span> ember</a>
+        <span class="small nav-note">SEASONAL KITCHEN · EST. 2018</span>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="menu-intro text-center py-5">
+      <div class="container py-3">
+        <p class="eyebrow">FRESH FROM OUR KITCHEN</p>
+        <h1 class="display-4 fw-bold">Today's Menu</h1>
+        <p class="lead mx-auto intro-copy">Seasonal ingredients, honest cooking, and dishes made to be shared.</p>
+      </div>
+    </section>
+    <section class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-7">
+          <div class="d-flex justify-content-between align-items-end mb-3"><div><p class="eyebrow mb-1">MADE WITH CARE</p><h2 class="h3 fw-bold mb-0">Menu & prices</h2></div><span class="small text-secondary">All prices in INR</span></div>
+          <!-- table-responsive lets the Bootstrap table scroll on narrow screens. -->
+          <div class="table-responsive menu-table-wrap">
+            <table class="table align-middle mb-0">
+              <thead><tr><th scope="col">Dish</th><th scope="col">Category</th><th scope="col" class="text-end">Price</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Roasted Tomato Soup</strong><small class="d-block text-secondary">Basil oil, sourdough crumb</small></td><td><span class="menu-tag">Starter</span></td><td class="text-end fw-semibold">₹220</td></tr>
+                <tr><td><strong>Garden Burrata Salad</strong><small class="d-block text-secondary">Heirloom tomato, greens, pesto</small></td><td><span class="menu-tag">Starter</span></td><td class="text-end fw-semibold">₹390</td></tr>
+                <tr><td><strong>Wild Mushroom Risotto</strong><small class="d-block text-secondary">Arborio rice, parmesan, thyme</small></td><td><span class="menu-tag">Main</span></td><td class="text-end fw-semibold">₹520</td></tr>
+                <tr><td><strong>Herb-Grilled Cottage Cheese</strong><small class="d-block text-secondary">Charred vegetables, lemon butter</small></td><td><span class="menu-tag">Main</span></td><td class="text-end fw-semibold">₹480</td></tr>
+                <tr><td><strong>Dark Chocolate Tart</strong><small class="d-block text-secondary">Cocoa crust, vanilla cream</small></td><td><span class="menu-tag">Dessert</span></td><td class="text-end fw-semibold">₹260</td></tr>
+                <tr><td><strong>Rosemary Lemonade</strong><small class="d-block text-secondary">Fresh lemon, rosemary syrup</small></td><td><span class="menu-tag">Drink</span></td><td class="text-end fw-semibold">₹160</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="specials mt-4 p-4 rounded-4">
+            <h2 class="h4 fw-bold mb-3">Chef's Specials</h2>
+            <!-- Bootstrap list-group gives the specials a consistent component style. -->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between gap-3"><span><strong>Smoky Aubergine Steak</strong><small class="d-block text-secondary">Pomegranate glaze, herbed yogurt</small></span><span class="fw-bold text-nowrap">₹450</span></li>
+              <li class="list-group-item d-flex justify-content-between gap-3"><span><strong>Saffron Cream Pasta</strong><small class="d-block text-secondary">Fresh herbs, parmesan shavings</small></span><span class="fw-bold text-nowrap">₹490</span></li>
+              <li class="list-group-item d-flex justify-content-between gap-3"><span><strong>Warm Apple Crumble</strong><small class="d-block text-secondary">Cinnamon, oat crumble, cream</small></span><span class="fw-bold text-nowrap">₹280</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <figure class="food-figure mb-4">
+            <img class="img-fluid rounded-4" src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1000&q=85" alt="Freshly prepared restaurant dish with vegetables and herbs">
+            <figcaption class="small text-secondary mt-2">Seasonal plates, prepared fresh every day.</figcaption>
+          </figure>
+          <aside class="reservation-card p-4 rounded-4">
+            <p class="eyebrow mb-2">PULL UP A CHAIR</p><h2 class="h4 fw-bold">Your table is waiting.</h2><p class="text-secondary">Join us for a relaxed lunch or an unhurried dinner with friends.</p><a href="mailto:hello@oliveember.example" class="btn btn-olive">Request a reservation</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="py-4 text-center small">Olive & Ember · 12 Garden Lane · Open daily, 12 PM–10 PM</footer>
+</body>
+</html>

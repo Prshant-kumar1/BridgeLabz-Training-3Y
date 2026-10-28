@@ -1,0 +1,25 @@
+/* Restaurant palette and small refinements; Bootstrap supplies the table and list group. */
+:root { --olive: #42553e; --olive-soft: #eef1e8; --warm: #faf8f2; }
+body { background: var(--warm); color: #2d332a; font-family: Georgia, "Times New Roman", serif; }
+.restaurant-header { background: #fff; border-bottom: 1px solid #e8e5da; }
+.navbar-brand { color: var(--olive); font-family: system-ui, sans-serif; letter-spacing: -.05em; font-size: 1.5rem; }
+.navbar-brand span { color: #b78350; }
+.nav-note { color: #777b6f; letter-spacing: .12em; font-family: system-ui, sans-serif; font-size: .65rem; }
+.menu-intro { background: linear-gradient(120deg, #eff1e8, #f9f5eb); }
+.eyebrow { color: #7e8b60; font: 800 .7rem system-ui, sans-serif; letter-spacing: .16em; }
+.intro-copy { color: #6c7065; max-width: 620px; }
+h1, h2, h3, .btn, .table, .list-group { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.menu-table-wrap { border: 1px solid #e9e6dc; border-radius: .8rem; overflow: hidden; background: #fff; }
+.table thead th { background: #42553e; color: #fff; font-size: .8rem; font-weight: 600; padding: 1rem; }
+.table tbody td { padding: 1rem; border-color: #eeece4; }
+.table tbody tr:last-child td { border-bottom: 0; }
+.table small, .list-group small { font-size: .78rem; margin-top: .25rem; }
+.menu-tag { display: inline-block; padding: .3rem .55rem; background: #eef1e8; color: #526649; border-radius: 2rem; font: 600 .7rem system-ui, sans-serif; }
+.specials { background: #eef1e8; }
+.specials .list-group-item { background: transparent; border-color: #dfe4d6; padding: .85rem 0; }
+.food-figure img { width: 100%; max-height: 460px; object-fit: cover; }
+.reservation-card { background: #fff; border: 1px solid #e9e6dc; }
+.btn-olive { background: var(--olive); color: white; border-radius: 2rem; padding: .7rem 1.2rem; }
+.btn-olive:hover { background: #2e3c2b; color: white; }
+footer { background: #42553e; color: #e7eadf; font-family: system-ui, sans-serif; }
+@media (max-width: 575.98px) { .nav-note { display: none; } .table tbody td { padding: .8rem .6rem; font-size: .86rem; } }

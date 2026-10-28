@@ -1,0 +1,14 @@
+/* Small portfolio-specific overrides; Bootstrap handles the responsive grid. */
+:root { --bs-primary: #6558d3; --bs-primary-rgb: 101, 88, 211; }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.portfolio-header { background: #fff; border-bottom: 1px solid #ececf4; }
+.accent, .eyebrow { color: #6558d3; }
+.eyebrow { font-size: .75rem; font-weight: 800; letter-spacing: .18em; }
+.profile-panel { border: 1px solid #eeedf7; }
+.profile-image { width: 150px; height: 150px; object-fit: cover; border: 5px solid #eeebff; }
+.intro { max-width: 680px; color: #626779; }
+.skill-tile { background: #f7f6ff; border: 1px solid #eeecff; }
+.form-control { padding: .75rem .9rem; border-color: #dfe1eb; }
+.form-control:focus { border-color: #9389ef; box-shadow: 0 0 0 .2rem #6558d322; }
+.btn { border-radius: .7rem; }
+@media (max-width: 575.98px) { .profile-image { width: 125px; height: 125px; } .profile-panel { padding: 1.5rem !important; } }
