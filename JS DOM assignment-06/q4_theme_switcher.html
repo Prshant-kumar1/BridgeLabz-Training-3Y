@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theme Switcher</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; transition: background 0.3s, color 0.3s; }
+        body.light { background-color: #ffffff; color: #333333; }
+        body.dark { background-color: #1a1a1a; color: #f1f1f1; }
+        body.blue { background-color: #e3f2fd; color: #0d47a1; }
+        .controls { margin-top: 20px; }
+        button { padding: 10px 15px; margin-right: 10px; cursor: pointer; }
+    </style>
+</head>
+<body class="light" data-theme="light">
+    <h1>Theme Switcher Demo</h1>
+    <p>Click the buttons below to dynamically change themes using attribute manipulation (<code>setAttribute</code>).</p>
+    <div class="controls">
+        <button id="lightThemeBtn">Light Theme</button>
+        <button id="darkThemeBtn">Dark Theme</button>
+        <button id="blueThemeBtn">Blue Theme</button>
+    </div>
+<script src="q4_theme_switcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Product List Manager</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .product-container { max-width: 400px; }
+        input[type="text"] { padding: 8px; width: 65%; }
+        button { padding: 8px 12px; cursor: pointer; }
+        ul { list-style-type: none; padding: 0; margin-top: 20px; }
+        li { display: flex; justify-content: space-between; align-items: center; padding: 8px; background: #f9f9f9; margin-bottom: 6px; border: 1px solid #ddd; }
+        .actions button { margin-left: 5px; font-size: 12px; }
+        .editing input { width: 60%; padding: 4px; }
+    </style>
+</head>
+<body>
+<div class="product-container">
+    <h2>Product Manager</h2>
+    <div class="input-group">
+        <input type="text" id="productInput" placeholder="Enter product name...">
+        <button id="addProductBtn">Add Product</button>
+    </div>
+    <ul id="productList"></ul>
+</div>
+<script src="q1_product_manager.js"></script>
+</body>
+</html>
